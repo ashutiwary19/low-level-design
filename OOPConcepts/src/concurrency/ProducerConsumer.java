@@ -51,6 +51,7 @@ class Producer implements Runnable {
 		this.queue = queue;
 		this.name = name;
 		this.capacity = capacity;
+		LinkedList<Integer> l ;
 	}
 
 	public void produce() {
@@ -146,6 +147,7 @@ public class ProducerConsumer {
 			service.submit(producer);
 			service.submit(consumer);
 		}
+		
 
 		service.shutdown();
 		try {
