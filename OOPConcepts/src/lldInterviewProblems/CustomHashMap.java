@@ -10,6 +10,11 @@ import java.util.Objects;
 // Growable on loadfactor=0.75
 
 // Extra how to make it thread safe
+// Make all methods synchronized
+// Use an array of reentrant locks for each operations on bucket level, add globallock StampedLock for resize 
+// Use readWritelock if the map is read extensive
+// Segmented locks
+// Immutable snapshot, use COWS (copy on write swap) for read heavy map
 
 public class CustomHashMap<T, V> {
 	final static class CustomEntry<T, V> {
